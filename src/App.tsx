@@ -1,5 +1,5 @@
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
@@ -9,20 +9,6 @@ import Experience from './components/Experience';
 import StudentLeadership from './components/StudentLeadership';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-
-const GlobalStyles = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: #bbdefb;
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-  }
-`;
 
 // Layout styled components
 const SiteWrapper = styled.div`
@@ -64,9 +50,7 @@ const Main = styled.main`
 // Root component
 function Root() {
     return (
-        <>
-            <GlobalStyles />
-            <SiteWrapper>
+        <SiteWrapper>
                 <Header />
                 <Container>
                     <Navigation />
@@ -83,7 +67,6 @@ function Root() {
                 </Container>
                 <Footer />
             </SiteWrapper>
-        </>
     );
 }
 
